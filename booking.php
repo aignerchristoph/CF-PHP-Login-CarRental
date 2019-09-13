@@ -23,8 +23,7 @@ require_once'dbconnect.php';
 	<link rel="stylesheet" href="">
 </head>
 <body>
-
-
+	
 	<h1>booking page</h1>
 
 <?php
@@ -37,7 +36,10 @@ if (isset($_GET['car_id'])) {
              $chris = $result->fetch_assoc();
 
    echo '<div class="col-md-3 card">
-    		<img src="'.$chris['img'].'" class="card-img-top" alt="...">
+
+    		<div class="embed-responsive embed-responsive-16by9">
+				<img src="'.$chris['img'].'" class="card-img-top" alt="...">
+			</div>
     		<div class="card-body">
       			<h5 class="card-title">'.$chris['car_model'].'</h5>
       			<p class="card-text">'.$chris['car_price'].'</p>

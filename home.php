@@ -17,6 +17,7 @@
   <head >
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Welcome - <?php echo $userRow['userEmail' ]; ?></title>
+
   </head>
   <body >
              Hi <?php echo $userRow['userName' ]; ?>
@@ -36,7 +37,9 @@
               if($result->num_rows > 0) {
                   while($chris = $result->fetch_assoc()) {
                      echo  '<div class="col-md-3 card">
-    <img src="'.$chris['img'].'" class="card-img-top" alt="...">
+        <div class="embed-responsive">
+        <img src="'.$chris['img'].'" style="height:300px;  object-fit: cover;" class="embed-responsive card-img-top" alt="...">
+      </div>
     <div class="card-body">
       <h5 class="card-title">'.$chris['car_model'].'</h5>
       <p class="card-text">'.$chris['car_price'].'</p>
